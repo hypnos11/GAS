@@ -9,3 +9,15 @@ function OnEdit() {
   .build();
   sheet.updateChart(chart);
 }
+
+// This is supposed to be getTitle
+// This got deleted somehow.
+// 20190223 - Come back and hack this up later to make it work again.
+function myFunction() {
+  var sheet = SpreadsheetApp.getActiveSheet();
+  var chart = sheet.getCharts()[0];
+  chart = chart.modify()
+  .setOption('title', sheet.getActiveCell().getValue() || 'Empty')
+  .build();
+  sheet.updateChart(chart);
+}
