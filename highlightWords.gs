@@ -1,3 +1,5 @@
+// You can Draw a button anywhere on the sheet and "Assign script" to it to the UI aspect
+
 function highlight() {
   clearColumnS();
   boldMyWords()
