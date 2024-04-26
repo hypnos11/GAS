@@ -36,7 +36,7 @@ function authCallback(request) {
 function fetchData() {
   var oauth2Service = getOAuth2Service();
   var token = oauth2Service.getAccessToken();
-  var apiKey = 'YOUR_API_KEY';
+  var apiKey = 'AIzaSyC-1xy48LEjCIBn1PclhfEzM0Cq2TNOylk';
   var channel = 'UCdqxvzJl-0qYhPi3Ukkz3yQ'; // Replace CHANNEL_ID with the ID of the channel you want to query
   var query = 'NiziU'; // Replace QUERY_PATTERN with the specific pattern you want to search for
 
