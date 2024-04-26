@@ -37,8 +37,8 @@ function fetchData() {
   var oauth2Service = getOAuth2Service();
   var token = oauth2Service.getAccessToken();
   var apiKey = 'YOUR_API_KEY';
-  var channel = 'CHANNEL_ID'; // Replace CHANNEL_ID with the ID of the channel you want to query
-  var query = 'QUERY_PATTERN'; // Replace QUERY_PATTERN with the specific pattern you want to search for
+  var channel = 'UCdqxvzJl-0qYhPi3Ukkz3yQ'; // Replace CHANNEL_ID with the ID of the channel you want to query
+  var query = 'NiziU'; // Replace QUERY_PATTERN with the specific pattern you want to search for
 
   var url = 'https://www.googleapis.com/youtube/v3/search?key=' + apiKey +
             '&channelId=' + channel +
