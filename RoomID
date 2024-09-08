@@ -1,0 +1,350 @@
+// This will pull calendar event data using the Google C/ API
+// It will also send an email notification based on conditional values in specified columns.
+
+function getBookings(){
+  getRoom1();
+  getRoom4();
+  getRoom5();
+  getRoom6();
+  getRoom9();
+  getRoom10();
+  getRoom11();
+  getRoom12();
+  getRoom14()
+}
+
+function getMain(){
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName("MAIN");
+
+  // var cal = CalendarApp.getCalendarById("testmailbox1@gmail.com");
+  var cal = CalendarApp.getCalendarById("testmailbox2@gmail.com");
+  var events = cal.getEvents(new Date("3/1/2024 12:00 AM"), new Date("12/31/2024 11:59 PM"));
+
+  for(var i = 0;i<events.length;i++){
+    var title = events[i].getTitle();
+    var start_time = events[i].getStartTime();
+    var end_time = events[i].e = events[i].getEndTime();
+    var loc = events[i].getLocation();
+    var des = events[i].getDescription();
+
+    sheet.getRange(i+1,1).setValue(title);
+    sheet.getRange(i+1,2).setValue(start_time);
+    sheet.getRange(i+1,3).setValue(end_time);
+    sheet.getRange(i+1,4).setValue(loc);
+    sheet.getRange(i+1,5).setValue(des);
+  }
+
+  Logger.log("Events have been added to the Spreadsheet");
+}
+
+function getRoom1(){
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName("ROOM1");
+
+  // var cal = CalendarApp.getCalendarById("testmailbox1@gmail.com");
+  var cal = CalendarApp.getCalendarById("[INSERT CALENDAR ID]@group.calendar.google.com");
+  var events = cal.getEvents(new Date("1/1/2024 12:00 AM"), new Date("12/31/2024 11:59 PM"));
+
+  for(var i = 0;i<events.length;i++){
+    var title = events[i].getTitle();
+    var start_time = events[i].getStartTime();
+    var end_time = events[i].e = events[i].getEndTime();
+    var loc = events[i].getLocation();
+    var des = events[i].getDescription();
+
+    sheet.getRange(i+1,1).setValue(title);
+    sheet.getRange(i+1,2).setValue(start_time);
+    sheet.getRange(i+1,3).setValue(end_time);
+    sheet.getRange(i+1,4).setValue(loc);
+    sheet.getRange(i+1,5).setValue(des);
+  }
+
+  Logger.log("Events have been added to the Spreadsheet");
+}
+
+function getRoom4(){
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName("ROOM4");
+
+  // var cal = CalendarApp.getCalendarById("testmailbox1@gmail.com");
+  var cal = CalendarApp.getCalendarById("[INSERT CALENDAR ID]@group.calendar.google.com");
+  var events = cal.getEvents(new Date("1/1/2024 12:00 AM"), new Date("12/31/2024 11:59 PM"));
+
+  for(var i = 0;i<events.length;i++){
+    var title = events[i].getTitle();
+    var start_time = events[i].getStartTime();
+    var end_time = events[i].e = events[i].getEndTime();
+    var loc = events[i].getLocation();
+    var des = events[i].getDescription();
+
+    sheet.getRange(i+1,1).setValue(title);
+    sheet.getRange(i+1,2).setValue(start_time);
+    sheet.getRange(i+1,3).setValue(end_time);
+    sheet.getRange(i+1,4).setValue(loc);
+    sheet.getRange(i+1,5).setValue(des);
+  }
+
+  Logger.log("Events have been added to the Spreadsheet");
+}
+
+function getRoom5(){
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName("ROOM5");
+
+  // var cal = CalendarApp.getCalendarById("testmailbox1@gmail.com");
+  var cal = CalendarApp.getCalendarById("[INSERT CALENDAR ID]@group.calendar.google.com");
+  var events = cal.getEvents(new Date("1/1/2024 12:00 AM"), new Date("12/31/2024 11:59 PM"));
+
+  for(var i = 0;i<events.length;i++){
+    var title = events[i].getTitle();
+    var start_time = events[i].getStartTime();
+    var end_time = events[i].e = events[i].getEndTime();
+    var loc = events[i].getLocation();
+    var des = events[i].getDescription();
+
+    sheet.getRange(i+1,1).setValue(title);
+    sheet.getRange(i+1,2).setValue(start_time);
+    sheet.getRange(i+1,3).setValue(end_time);
+    sheet.getRange(i+1,4).setValue(loc);
+    sheet.getRange(i+1,5).setValue(des);
+  }
+
+  Logger.log("Events have been added to the Spreadsheet");
+}
+
+function getRoom6(){
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName("ROOM6");
+
+  // var cal = CalendarApp.getCalendarById("testmailbox1@gmail.com");
+  var cal = CalendarApp.getCalendarById("[INSERT CALENDAR ID]@group.calendar.google.com");
+  var events = cal.getEvents(new Date("1/1/2024 12:00 AM"), new Date("12/31/2024 11:59 PM"));
+
+  for(var i = 0;i<events.length;i++){
+    var title = events[i].getTitle();
+    var start_time = events[i].getStartTime();
+    var end_time = events[i].e = events[i].getEndTime();
+    var loc = events[i].getLocation();
+    var des = events[i].getDescription();
+
+    sheet.getRange(i+1,1).setValue(title);
+    sheet.getRange(i+1,2).setValue(start_time);
+    sheet.getRange(i+1,3).setValue(end_time);
+    sheet.getRange(i+1,4).setValue(loc);
+    sheet.getRange(i+1,5).setValue(des);
+  }
+
+  Logger.log("Events have been added to the Spreadsheet");
+}
+
+function getRoom9(){
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName("ROOM9");
+
+  // var cal = CalendarApp.getCalendarById("testmailbox1@gmail.com");
+  var cal = CalendarApp.getCalendarById("[INSERT CALENDAR ID]@group.calendar.google.com");
+  var events = cal.getEvents(new Date("1/1/2024 12:00 AM"), new Date("12/31/2024 11:59 PM"));
+
+  for(var i = 0;i<events.length;i++){
+    var title = events[i].getTitle();
+    var start_time = events[i].getStartTime();
+    var end_time = events[i].e = events[i].getEndTime();
+    var loc = events[i].getLocation();
+    var des = events[i].getDescription();
+
+    sheet.getRange(i+1,1).setValue(title);
+    sheet.getRange(i+1,2).setValue(start_time);
+    sheet.getRange(i+1,3).setValue(end_time);
+    sheet.getRange(i+1,4).setValue(loc);
+    sheet.getRange(i+1,5).setValue(des);
+  }
+
+  Logger.log("Events have been added to the Spreadsheet");
+}
+
+function getRoom10(){
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName("ROOM10");
+
+  // var cal = CalendarApp.getCalendarById("testmailbox1@gmail.com");
+  var cal = CalendarApp.getCalendarById("[INSERT CALENDAR ID]@group.calendar.google.com");
+  var events = cal.getEvents(new Date("1/1/2024 12:00 AM"), new Date("12/31/2024 11:59 PM"));
+
+  for(var i = 0;i<events.length;i++){
+    var title = events[i].getTitle();
+    var start_time = events[i].getStartTime();
+    var end_time = events[i].e = events[i].getEndTime();
+    var loc = events[i].getLocation();
+    var des = events[i].getDescription();
+
+    sheet.getRange(i+1,1).setValue(title);
+    sheet.getRange(i+1,2).setValue(start_time);
+    sheet.getRange(i+1,3).setValue(end_time);
+    sheet.getRange(i+1,4).setValue(loc);
+    sheet.getRange(i+1,5).setValue(des);
+  }
+
+  Logger.log("Events have been added to the Spreadsheet");
+}
+
+function getRoom11(){
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName("ROOM11");
+
+  // var cal = CalendarApp.getCalendarById("testmailbox1@gmail.com");
+  var cal = CalendarApp.getCalendarById("[INSERT CALENDAR ID]@group.calendar.google.com");
+  var events = cal.getEvents(new Date("1/1/2024 12:00 AM"), new Date("12/31/2024 11:59 PM"));
+
+  for(var i = 0;i<events.length;i++){
+    var title = events[i].getTitle();
+    var start_time = events[i].getStartTime();
+    var end_time = events[i].e = events[i].getEndTime();
+    var loc = events[i].getLocation();
+    var des = events[i].getDescription();
+
+    sheet.getRange(i+1,1).setValue(title);
+    sheet.getRange(i+1,2).setValue(start_time);
+    sheet.getRange(i+1,3).setValue(end_time);
+    sheet.getRange(i+1,4).setValue(loc);
+    sheet.getRange(i+1,5).setValue(des);
+  }
+
+  Logger.log("Events have been added to the Spreadsheet");
+}
+
+function getRoom12(){
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName("ROOM12");
+
+  // var cal = CalendarApp.getCalendarById("testmailbox1@gmail.com");
+  var cal = CalendarApp.getCalendarById("[INSERT CALENDAR ID]@group.calendar.google.com");
+  var events = cal.getEvents(new Date("1/1/2024 12:00 AM"), new Date("12/31/2024 11:59 PM"));
+
+  for(var i = 0;i<events.length;i++){
+    var title = events[i].getTitle();
+    var start_time = events[i].getStartTime();
+    var end_time = events[i].e = events[i].getEndTime();
+    var loc = events[i].getLocation();
+    var des = events[i].getDescription();
+
+    sheet.getRange(i+1,1).setValue(title);
+    sheet.getRange(i+1,2).setValue(start_time);
+    sheet.getRange(i+1,3).setValue(end_time);
+    sheet.getRange(i+1,4).setValue(loc);
+    sheet.getRange(i+1,5).setValue(des);
+  }
+
+  Logger.log("Events have been added to the Spreadsheet");
+}
+
+function getRoom14(){
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName("ROOM14");
+
+  // var cal = CalendarApp.getCalendarById("testmailbox1@gmail.com");
+  var cal = CalendarApp.getCalendarById("[INSERT CALENDAR ID]@group.calendar.google.com");
+  var events = cal.getEvents(new Date("1/1/2024 12:00 AM"), new Date("12/31/2024 11:59 PM"));
+
+  for(var i = 0;i<events.length;i++){
+    var title = events[i].getTitle();
+    var start_time = events[i].getStartTime();
+    var end_time = events[i].e = events[i].getEndTime();
+    var loc = events[i].getLocation();
+    var des = events[i].getDescription();
+
+    sheet.getRange(i+1,1).setValue(title);
+    sheet.getRange(i+1,2).setValue(start_time);
+    sheet.getRange(i+1,3).setValue(end_time);
+    sheet.getRange(i+1,4).setValue(loc);
+    sheet.getRange(i+1,5).setValue(des);
+  }
+
+  Logger.log("Events have been added to the Spreadsheet");
+}
+
+
+//borrowed from https://stackoverflow.com/questions/65236138/google-apps-script-send-email-based-on-value-in-cell
+// ... and https://stackoverflow.com/questions/28355195/google-script-mailapp-sendemail-to-multiple-addresses
+function fixError() {
+  var recipientsTO = "testmailbox1@gmail.com" + "," + "testmailbox2@gmail.com";
+  const ss = SpreadsheetApp.getActive();
+  const sh = ss.getSheetByName('ALL_ROOMS'); // change ALL_ROOMS to the name of your sheet
+  const data = sh.getRange('A2:K' + sh.getLastRow()).getValues();
+  data.forEach(r=>{
+     // Numbered columns based on array (i.e. starts with zero)
+     let errMsgValue = r[10];  
+     if (errMsgValue === "Please fix"){
+         // Referencing (1st) guest column for array meaning starts with zero
+         let name = r[0];
+         let subject = 'ROSEMARIE, FIX CALENDAR CORRECTION REQUIRED FOR GUEST [' + name + ']';
+         let message = 'Hi, Rose!<p>Please fix the Google Calendar event for guest ' + name + ' to ensure our reporting is accurate. Click the link below to find it.:</p><p><a href="https://calendar.google.com/calendar/u/0/r/search?q=' + name + '" target="_blank">Click here</a></p><p>Thanks in advance!<br />~Hubert</p>';
+         MailApp.sendEmail (
+          // Start of mailto array
+          {
+          // Created variable to send to multiple recipients
+          to: recipientsTO, // <-- Comment when testing
+          //to: 'testmailbox1@gmail.com', // <-- Uncomment for testing
+          //cc: recipientsCC,
+          subject: subject,
+          htmlBody: message
+          }
+         )
+     }
+  });  
+}
+
+//borrowed from https://stackoverflow.com/questions/65236138/google-apps-script-send-email-based-on-value-in-cell
+// ... and https://stackoverflow.com/questions/28355195/google-script-mailapp-sendemail-to-multiple-addresses
+function bdbCalError() {
+  var recipientsTO = "testmailbox1@gmail.com" + "," + "testmailbox2@gmail.com";
+  const ss = SpreadsheetApp.getActive();
+  const sh = ss.getSheetByName('bdbCal'); // change ALL_ROOMS to the name of your sheet
+  const data = sh.getRange('A2:H' + sh.getLastRow()).getValues();
+  data.forEach(r=>{
+     // Numbered columns based on array (i.e. starts with zero)
+     let errMsgValue = r[7];  
+     if (errMsgValue === true){
+         // Referencing (1st) guest column for array meaning starts with zero
+         let name = r[0];
+         let subject = 'ROSEMARIE: MOVE GUEST [' + name + '] TO THEIR RESPECTIVE ROOM CALENDAR';
+         let message = 'Hi, Rose!<p>Please move the Google Calendar event for guest ' + name + ' from the main Balay da Blas Hotel Calendar to their proper Room calendar to ensure our reporting is accurate. Click the link below to find it.:</p><p><a href="https://calendar.google.com/calendar/u/0/r/search?q=' + name + '" target="_blank">Click here</a></p><p>Pleasee <a href="https://docs.google.com/spreadsheets/d/1pOtDCFP0z-PIjLPEpX_wjClTlbEKLK6KYWPDux8FbTc/edit?gid=454279572#gid=454279572&range=G1" target="_blank">check all the items that are Done</a> to stop futuer daily notifications.</p><p>Thanks in advance!</p>~Hubert';
+         MailApp.sendEmail (
+          // Start of mailto array
+          {
+          // Created variable to send to multiple recipients
+          to: recipientsTO, // <-- Comment when testing
+          //to: 'testmailbox1@gmail.com', // <-- Uncomment for testing
+          //cc: recipientsCC,
+          subject: subject,
+          htmlBody: message
+          }
+         )
+     }
+  });  
+}
+
+function getBdbCal(){
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName("bdbCal");
+
+  // var cal = CalendarApp.getCalendarById("testmailbox1@gmail.com");
+  var cal = CalendarApp.getCalendarById("testmailbox2@gmail.com");
+  var events = cal.getEvents(new Date("3/1/2024 12:00 AM"), new Date("12/31/2024 11:59 PM"));
+
+  for(var i = 0;i<events.length;i++){
+    var title = events[i].getTitle();
+    var start_time = events[i].getStartTime();
+    var end_time = events[i].e = events[i].getEndTime();
+    var loc = events[i].getLocation();
+    var des = events[i].getDescription();
+
+    sheet.getRange(i+1,1).setValue(title);
+    sheet.getRange(i+1,2).setValue(start_time);
+    sheet.getRange(i+1,3).setValue(end_time);
+    sheet.getRange(i+1,4).setValue(loc);
+    sheet.getRange(i+1,5).setValue(des);
+  }
+
+  Logger.log("Events have been added to the Spreadsheet");
+}
