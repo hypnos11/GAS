@@ -1,0 +1,75 @@
+/**
+ * Renames all sheet tabs in the active Google Sheet by replacing a specified text pattern.
+ * This uses simple string replacement (case-sensitive, first occurrence only).
+ * For regex patterns or global replacements, modify the replace() call accordingly.
+ * 
+ * To use:
+ * 1. Open your Google Sheet.
+ * 2. Go to Extensions > Apps Script.
+ * 3. Paste this code into the editor.
+ * 4. Save the project (e.g., name it "Sheet Renamer").
+ * 5. Run the function `renameSheetTabs` (grant permissions if prompted).
+ * 6. Follow the prompts to enter the text to find and replace.
+ * 
+ * Note: This does not check for duplicate names or invalid names (e.g., too long or empty).
+ * If duplicates occur, Google Sheets will auto-append numbers.
+ */
+function renameSheetTabs() {
+  var ui = SpreadsheetApp.getUi();
+  
+  // Prompt for text to find
+  var findResult = ui.prompt(
+    'Find and Replace Sheet Names',
+    'Enter the pattern/text to find in sheet names:',
+    ui.ButtonSet.OK_CANCEL
+  );
+  
+  if (findResult.getSelectedButton() == ui.Button.CANCEL) {
+    return;
+  }
+  var findText = findResult.getResponseText().trim();
+  if (!findText) {
+    ui.alert('No find text entered. Operation cancelled.');
+    return;
+  }
+  
+  // Prompt for replacement text
+  var replaceResult = ui.prompt(
+    'Find and Replace Sheet Names',
+    'Enter the replacement text:',
+    ui.ButtonSet.OK_CANCEL
+  );
+  
+  if (replaceResult.getSelectedButton() == ui.Button.CANCEL) {
+    return;
+  }
+  var replaceText = replaceResult.getResponseText().trim();
+  
+  var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  var sheets = spreadsheet.getSheets();
+  var changes = [];
+  
+  for (var i = 0; i < sheets.length; i++) {
+    var sheet = sheets[i];
+    var oldName = sheet.getName();
+    var newName = oldName.replace(findText, replaceText);
+    
+    if (newName !== oldName && newName) {
+      try {
+        sheet.setName(newName);
+        changes.push('Renamed "' + oldName + '" to "' + newName + '"');
+      } catch (e) {
+        changes.push('Failed to rename "' + oldName + '" to "' + newName + '": ' + e.toString());
+      }
+    }
+  }
+  
+  if (changes.length > 0) {
+    ui.alert('Rename Complete', 'Changes made:\n' + changes.join('\n'), ui.ButtonSet.OK);
+  } else {
+    ui.alert('No Changes', 'No sheet names matched the find pattern.', ui.ButtonSet.OK);
+  }
+  
+  // Log changes for debugging (view in Apps Script > Executions)
+  console.log('Rename operation completed. Changes: ' + changes.join('; '));
+}
